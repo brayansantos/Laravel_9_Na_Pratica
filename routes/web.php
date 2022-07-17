@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -57,6 +58,7 @@ Route::group(['middleware' => ['auth']], function(){
 
         Route::resource('stores', StoreController::class);
         Route::resource('products', ProductController::class);
+        Route::resource('categories', CategoryController::class);
 
     });
 });

@@ -33,15 +33,16 @@ class StoreController extends Controller
         $data = $request->all();
 
         $user = auth()->user();
-
-        $store = new Store;
+        $user->store()->create($data);
+        
+        /*$store = new Store;
         $store->name = $request->name;
         $store->description = $request->description;
         $store->phone = $request->phone;
         $store->mobile_phone = $request->mobile_phone;
         $store->slug = $request->slug;
         $store->user_id = $user->id;
-        $store->save();
+        $store->save();*/
 
         flash('Loja criada com sucesso')->success(); 
         return redirect(route('admin.stores.index'));
